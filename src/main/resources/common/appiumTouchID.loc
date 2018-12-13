@@ -1,1 +1,1 @@
-auth.button{'locator':'xpath=//*[contains(@name,'AUTH')]|//*[contains(@text,'AUTH')]'}
+auth.button=["xpath=//*[contains(@name,'AUTH')]","xpath=//*[contains(@text,'AUTH')]"]
