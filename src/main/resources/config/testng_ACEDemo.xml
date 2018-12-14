@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Appium Demo Suite" verbose="0" parallel="tests">
+    <listeners>
+        <listener class-name="com.quantum.listeners.QuantumReportiumListener"/>
+    </listeners>
+
+    <!-- To use actual AppiumDriver classes defined    -->
+    <!-- by driverClass property in env.resources dirs -->
+    <!-- Set driver.name value to perfectoDriver       -->
+    <parameter name="driver.name" value="perfectoDriver"/>
+
+    <test name="IOS ACE Demo" enabled="true">
+        <parameter name="driver.capabilities.deviceName" value="B0210A2310BA12303309109F7B5AE07C97F8D3EC"></parameter>
+        <parameter name="driver.capabilities.windTunnelPersona" value="Georgia"></parameter>
+        <parameter name="env.resources" value="src/main/resources/ios"/>
+
+        <groups>
+            <run>
+                <include name="@ACEInterruptions"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+        </classes>
+    </test>
+    <test name="Android ACE Demo" enabled="true">
+        <parameter name="driver.capabilities.deviceName" value="988633475656463938"></parameter>
+        <parameter name="driver.capabilities.windTunnelPersona" value="Georgia"></parameter>
+        <parameter name="env.resources" value="src/main/resources/android"/>
+        <groups>
+            <run>
+                <include name="@ACEInterruptions"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+        </classes>
+    </test>
+</suite>
