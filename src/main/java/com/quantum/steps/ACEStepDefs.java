@@ -3,6 +3,7 @@ package com.quantum.steps;
 import com.qmetry.qaf.automation.step.QAFTestStepProvider;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
@@ -131,14 +132,41 @@ public class ACEStepDefs {
         String deviceOS = (String) driver.executeScript(Constants.MOBILEHANDSETINFO, restprms);
         restprms.remove(Constants.PROPERTY);
         if (deviceOS.equals(Constants.IOS)) {
-            restprms.put(Constants.NAME, Constants.GOOGLEMAPS);
+            restprms.put(Constants.NAME, Constants.REALTIMEFILTER);
         } else {
-            restprms.put(Constants.NAME, Constants.MAPS);
+            restprms.put(Constants.NAME, Constants.CAMERAAPP);
         }
         driver.executeScript(Constants.MOBILEAPPLICATIONOPEN, restprms);
         restprms.remove(Constants.NAME);
     }
 
+    @And("^I inject image: \"(.*?)\"$")
+    public void iInjectImage(String injectionImage) {
+        restprms.put(Constants.PROPERTY, Constants.OS);
+        String deviceOS = (String) driver.executeScript(Constants.MOBILEHANDSETINFO, restprms);
+        restprms.remove(Constants.PROPERTY);
+        if (deviceOS.equals(Constants.IOS)) {
+            restprms.put(Constants.NAME, Constants.REALTIMEFILTER);
+        } else {
+            restprms.put(Constants.NAME, Constants.CAMERAAPP);
+        }
+        restprms.put(Constants.REPOSITORYFILE, injectionImage);
+        driver.executeScript(Constants.MOBILEIMAGEINJECTIONSTART, restprms);
+        restprms.remove(Constants.NAME);
+        restprms.remove(Constants.REPOSITORYFILE);
+
+        switchToContext(driver, Constants.NATIVEAPP);
+        if (deviceOS.equals(Constants.ANDROID)) {
+            driver.findElementByXPath("//*[@resource-id=\"com.perfectomobile.cameraapp:id/btnCapture\"]").click();
+        }
+
+        testSleep(10000);
+
+        restprms.put(Constants.KEYSEQUENCE, Constants.HOME);
+        driver.executeScript(Constants.MOBILEPRESSKEY, restprms);
+        restprms.remove(Constants.KEYSEQUENCE);
+
+    }
 
     private void testSleep(long sleepTime) {
 		try {

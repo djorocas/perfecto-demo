@@ -16,7 +16,7 @@
 
         <groups>
             <run>
-                <include name="@ACEInterruptions"/>
+                <include name="@ACEDemo"/>
             </run>
         </groups>
         <classes>
@@ -29,7 +29,7 @@
         <parameter name="env.resources" value="src/main/resources/android"/>
         <groups>
             <run>
-                <include name="@ACEInterruptions"/>
+                <include name="@ACEDemo"/>
             </run>
         </groups>
         <classes>

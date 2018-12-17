@@ -22,6 +22,8 @@ public class Constants {
         public static final String MOBILEVNETWORKSTOP = "mobile:vnetwork:stop";
         public static final String MOBILEGATEWAYCALL = "mobile:gateway:call";
         public static final String MOBILEGATEWAYSMS = "mobile:gateway:sms";
+        public static final String MOBILEIMAGEINJECTIONSTART = "mobile:image.injection:start";
+        public static final String MOBILEPRESSKEY = "mobile:presskey";
 
         //VNetwork Parms
         public static final String PACKETLOSS = "packetLoss";
@@ -53,7 +55,8 @@ public class Constants {
         public static final String DEVICENAME = "deviceName";
         public static final String DEVICEID = "deviceId";
         public static final String BODY = "body";
-        public static final String PICTURE = "1200px-Nedbank_logo.svg.png";
+        public static final String REPOSITORYFILE = "repositoryFile";
+
 
         //Various Strings
         public static final String IOS = "iOS";
@@ -62,8 +65,9 @@ public class Constants {
         public static final String OS = "os";
         public static final String MAPS = "Maps";
         public static final String GOOGLEMAPS = "Google Maps";
-        public static final String REALTIMEFILTER = "TealTimeFilter";
-
+        public static final String REALTIMEFILTER = "RealTimeFilter";
+        public static final String CAMERAAPP = "CameraApp";
+        public static final String PICTURE = "1200px-Nedbank_logo.svg.png";
 
 	    //Scrolling
 	    public static final String COORD50TO85PCT = "50%, 85%";
