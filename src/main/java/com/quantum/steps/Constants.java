@@ -81,9 +81,6 @@ public class Constants {
 	    //Automation
 		public static final String WEBVIEW = "WEBVIEW";
 	    public static final String NATIVEAPP = "NATIVE_APP";
-	    
-	    //URLs
-	    public static final String URL2 = "https://www.db.com/company/en/private-and-commercial-bank.htm";
 
 	    //Device Models
 	    public static final String IPAD = "iPad";
