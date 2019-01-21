@@ -9,21 +9,8 @@
     <!-- Set driver.name value to perfectoDriver       -->
     <parameter name="driver.name" value="perfectoDriver"/>
 
-    <test name="IOS Touch ID" enabled="false">
-        <parameter name="driver.capabilities.deviceName" value="B0210A2310BA12303309109F7B5AE07C97F8D3EC"></parameter>
-        <parameter name="env.resources" value="src/main/resources/ios"/>
-
-        <groups>
-            <run>
-                <include name="@touchIDiOS"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
-        </classes>
-    </test>
     <test name="IOS Touch ID" enabled="true">
-        <parameter name="driver.capabilities.deviceName" value="311C990DA91C9CB4A36D2D6A5F296D5019D28678"></parameter>
+        <parameter name="driver.capabilities.deviceName" value="3223B53D8B0B789E293ECB7F94E5508DAAB4CF9A"></parameter>
         <parameter name="env.resources" value="src/main/resources/ios"/>
 
         <groups>
@@ -36,7 +23,7 @@
         </classes>
     </test>
     <test name="Android Touch ID" enabled="true">
-        <parameter name="driver.capabilities.deviceName" value="988633475656463938"></parameter>
+        <parameter name="driver.capabilities.deviceName" value="9887E8424E31504B58"></parameter>
         <parameter name="env.resources" value="src/main/resources/android"/>
         <groups>
             <run>
